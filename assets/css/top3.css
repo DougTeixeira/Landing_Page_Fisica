@@ -1,0 +1,44 @@
+.top3-content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    min-height: 100vh;
+    padding: 5rem;
+}
+
+.top3-h2 {
+    font-size: 5.5rem;
+    padding-bottom: 1rem;
+}
+
+.top3-descrition {
+    padding-bottom: 10rem;
+}
+
+.top3-grid-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    counter-reset: grid-count;
+}
+
+
+.top3-grid-content h3 {
+    position: relative;
+    font-size: 3rem;
+    padding-left: 6rem;
+    padding-bottom: 2rem;
+}
+
+.top3-grid-content h3::before {
+    counter-increment: grid-count;
+    content: counter(grid-count);
+    font-size: 6rem;
+    font-style: italic;
+    position: absolute;
+    top: -3rem;
+    left: 0rem;
+    transform: rotate(3deg);
+}

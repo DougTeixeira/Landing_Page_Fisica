@@ -1,0 +1,17 @@
+footer {
+    text-align: center;
+    padding: 2rem;
+}
+
+footer a {
+    font-size: 2rem;
+    color: black;
+}
+
+footer .name {
+    color: rgb(255, 0, 255);
+}
+
+footer .heart {
+    color: red;
+}
