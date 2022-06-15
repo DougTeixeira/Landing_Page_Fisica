@@ -49,6 +49,18 @@
     display: none;
 }
 
+.spin {
+    position: fixed;
+    width: 4rem;
+    height: 4rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    border-bottom-color: rgb(212, 0, 255);
+    animation: spin 2s ease-in-out infinite;
+}
+
 .back-to-top {
     position: fixed;
     background: rgb(56, 0, 119);
@@ -71,5 +83,11 @@
 @keyframes slide {
     from {
         transform: translateX(0.5rem);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
     }
 }
