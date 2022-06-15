@@ -1,9 +1,10 @@
 .menu {
-    background: black;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
+    border-bottom: 0.1rem solid var(--light-gray-color);
     z-index: 1;
 }
 
@@ -13,155 +14,126 @@
     align-items: center;
     padding-top: 0;
     padding-bottom: 0;
+    max-width: 120rem;
+    margin: 0 auto;
 }
 
-.menu-content h1 {
+.menu h1 {
     font-size: 2.3rem;
+    color: var(--primary-color);
 }
 
-.menu-content h1 a{
-    position: relative;
-    padding: 0.5rem;
-    color: white;
+.menu h1 a {
+    color: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.menu-content h1 img{
-    max-width: auto;
-    max-height: auto;
+.menu h1 a img {
+    max-width: 100%;
+    height: auto;
     width: 50px;
 }
 
-.menu-content h1 a::before {
-    content: '';
-    position: absolute;
-    top: -0.2rem;
-    left: -0.4rem;
-    background: transparent;
-    border: 0.2rem solid transparent;
-}
-
-.menu-content h1 a:hover::before {
-    animation: borda_tr 0.25s ease-in-out forwards;
-}
-
-.menu-content h1 a::after {
-    content: '';
-    position: absolute;
-    background: transparent;
-    bottom: 0;
-    right: 0;
-    border: 0.2rem solid transparent;
-}
-
-.menu-content h1 a:hover::after {
-    animation: borda_bl 0.25s ease-in-out forwards;
-}
-
-.menu-content ul {
+.menu ul {
+    list-style: none;
     display: flex;
 }
 
-.menu-content ul li {
-    padding: 1rem;
+.menu ul li {
+    padding: 1.5rem;
 }
 
-.menu-content ul li a {
+.menu ul li a {
     display: block;
-    position: relative;
     font-size: 1.8rem;
-    padding: 0.5rem;
-    border: 0.2rem solid transparent;
-    color: white;
+    padding: 0.1rem;
+    color: var(--primary-color);
+    position: relative;
+    text-transform: lowercase;
 }
 
-.menu-content ul li a:hover {
-    border: 0.2rem solid rgb(89, 0, 255);
-}
-
-.menu-content ul li a::before {
+.menu ul li a::after {
     content: '';
     position: absolute;
-    left: -0.2rem;
-    top: -0.1rem;
+    bottom: -0.3rem;
+    right: -0.3rem;
     background: transparent;
-    border: 0.2rem solid transparent;
-
+    border: 0.3rem solid transparent;
 }
 
-.menu-content ul li a::after {
+.menu ul li a::before {
     content: '';
     position: absolute;
-    bottom: -0.2rem;
-    right: -0.2rem;
+    top: -0.3rem;
+    left: -0.3rem;
     background: transparent;
-    border: 0.2rem solid transparent;
+    border: 0.3rem solid transparent;
 }
 
-.menu-content ul li a:hover::before {
-    animation: borda_tr 0.5s ease-in-out alternate-reverse;
+.menu ul li a:hover::after {
+    animation: bordabaixoesquerda 1s ease-in-out forwards;
 }
 
-.menu-content ul li a:hover::after {
-    animation: borda_bl 0.5s ease-in-out alternate-reverse;
+.menu ul li a:hover::before {
+    animation: bordatopdireita 1s ease-in-out forwards;
 }
 
-@keyframes borda_tr {
-    0% {
-        width: 0;
-        height: 0;
-        border-top-color: red;
-        border-left-color: transparent;
-        border-right-color: transparent;
-        border-bottom-color: transparent;
-    }
-
-    50% {
-        width: 100%;
-        height: 0;
-        border-top-color: rgb(212, 0, 255);
-        border-left-color: transparent;
-        border-right-color: rgb(212, 0, 255);
-        border-bottom-color: transparent;
-    }
-
-    100% {
-        width: 100%;
-        height: 97%;
-        border-top-color: rgb(212, 0, 255);
-        border-left-color: transparent;
-        border-right-color: rgb(212, 0, 255);
-        border-bottom-color: transparent;
-    }
-}
-
-@keyframes borda_bl {
+@keyframes bordabaixoesquerda {
     0% {
         width: 0;
         height: 0;
         border-top-color: transparent;
-        border-left-color: transparent;
         border-right-color: transparent;
-        border-bottom-color: rgb(212, 0, 255);
+        border-bottom-color: red;
+        border-left-color: transparent;
     }
 
     50% {
         width: 100%;
         height: 0;
         border-top-color: transparent;
-        border-left-color: rgb(212, 0, 255);
         border-right-color: transparent;
-        border-bottom-color: rgb(212, 0, 255);
+        border-bottom-color: red;
+        border-left-color: transparent;
     }
 
     100% {
         width: 100%;
         height: 100%;
         border-top-color: transparent;
-        border-left-color: rgb(212, 0, 255);
         border-right-color: transparent;
-        border-bottom-color: rgb(212, 0, 255);
+        border-bottom-color: red;
+        border-left-color: red;
+    }
+}
+
+@keyframes bordatopdireita {
+    0% {
+        width: 0;
+        height: 0;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+
+    50% {
+        width: 100%;
+        height: 0;
+        border-top-color: red;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+
+    100% {
+        width: 100%;
+        height: 100%;
+        border-top-color: red;
+        border-right-color: red;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
     }
 }
